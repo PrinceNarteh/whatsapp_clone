@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp_clone/colors.dart';
 
 class MobileScreenLayout extends StatelessWidget {
   const MobileScreenLayout({Key? key}) : super(key: key);
@@ -6,7 +7,7 @@ class MobileScreenLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 3,
+      length: 4,
       child: Scaffold(
         appBar: AppBar(
           title: const Text(
@@ -17,6 +18,8 @@ class MobileScreenLayout extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
+          backgroundColor: appBarColor,
+          elevation: 0,
           centerTitle: false,
           actions: [
             IconButton(
@@ -34,6 +37,24 @@ class MobileScreenLayout extends StatelessWidget {
               ),
             )
           ],
+          bottom: const TabBar(
+            indicatorWeight: 4,
+            labelColor: tabColor,
+            indicatorColor: tabColor,
+            unselectedLabelColor: Colors.grey,
+            labelStyle: TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
+            tabs: [
+              Tab(text: "CHATS"),
+              Tab(text: "GROUPS"),
+              Tab(text: "STATUS"),
+              Tab(text: "CALLS"),
+            ],
+          ),
+        ),
+        body: const Center(
+          child: Text("Mobile"),
         ),
       ),
     );

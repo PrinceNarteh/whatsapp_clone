@@ -20,11 +20,12 @@ class ContactList extends StatelessWidget {
                   child: ListTile(
                     leading: CircleAvatar(
                       backgroundImage: NetworkImage(
-                        contacts[index]["profilePic"].toString(),
+                        "${contacts[index]['profilePic']}",
                       ),
+                      radius: 30,
                     ),
                     title: Text(
-                      contacts[index]['name'].toString(),
+                      "${contacts[index]['name']}",
                       style: const TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
@@ -33,7 +34,7 @@ class ContactList extends StatelessWidget {
                     subtitle: Padding(
                       padding: const EdgeInsets.only(top: 6),
                       child: Text(
-                        contacts[index]['message'].toString(),
+                        "${contacts[index]['message']}",
                         style: const TextStyle(fontSize: 15),
                       ),
                     ),
@@ -49,7 +50,7 @@ class ContactList extends StatelessWidget {
               },
               separatorBuilder: (context, index) => Divider(
                 color: Colors.grey.shade700,
-                indent: 75,
+                indent: 85,
               ),
             ),
           ),

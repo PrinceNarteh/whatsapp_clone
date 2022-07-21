@@ -11,10 +11,30 @@ class WebProfileBar extends StatelessWidget {
       width: MediaQuery.of(context).size.width * 0.25,
       padding: const EdgeInsets.all(10),
       decoration: const BoxDecoration(
-          border: Border(
-            right: BorderSide(color: dividerColor),
+        border: Border(
+          right: BorderSide(color: dividerColor),
+        ),
+        color: webAppBarColor,
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              Icons.comment,
+              color: Colors.grey,
+            ),
           ),
-          color: webAppBarColor),
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              Icons.more_vert,
+              color: Colors.grey,
+            ),
+          )
+        ],
+      ),
     );
   }
 }
